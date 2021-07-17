@@ -1,0 +1,60 @@
+.card {
+  border-radius: 1rem;
+  position: relative;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: 20rem;
+  width: 20rem;
+  overflow: hidden;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.face {
+  border-radius: 1rem;
+  width: 100%;
+  height: 20rem;
+  background: orangered;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease, background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.front {
+  background: #54c571;
+  font-size: 7rem;
+}
+
+.back {
+  background: #00bfff;
+  transform: rotateY(180deg);
+}
+
+.back > h3 {
+  font-size: 2rem;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+.card:hover .front {
+  /* transform: rotateY(-180deg); */
+  background: #32eb60;
+}
+
+/* .card:hover .back {
+  transform: rotateY(0);
+} */
+
+.active.front {
+  transform: rotateY(-180deg);
+}
+
+.active.back {
+  transform: rotateY(0);
+}
